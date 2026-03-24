@@ -1,0 +1,25 @@
+name: Desligamentos
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # 08:00 Brasil (UTC-3)
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v3
+
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Rodar script
+        run: python desliga.py
