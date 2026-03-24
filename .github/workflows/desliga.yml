@@ -23,3 +23,9 @@ jobs:
 
       - name: Rodar script
         run: python desliga.py
+
+      - name: Upload do arquivo
+        uses: actions/upload-artifact@v4
+        with:
+          name: desligamentos
+          path: Desligados_*.json  
