@@ -26,6 +26,10 @@ ACCESS_KEY = os.getenv("ACCESS_KEY")
 SECRET = os.getenv("SECRET")
 TENANT = os.getenv("TENANT")
 
+print("ACCESS_KEY:", ACCESS_KEY)
+print("SECRET:", SECRET)
+print("TENANT:", TENANT)
+
 # =========================
 # AUTH
 # =========================
