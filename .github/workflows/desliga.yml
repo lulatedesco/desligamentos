@@ -22,7 +22,7 @@ jobs:
         run: pip install requests
 
       - name: Rodar script
-        run: python desliga.py
+        run: python Desliga.py
 
       - name: Upload do arquivo
         uses: actions/upload-artifact@v4
