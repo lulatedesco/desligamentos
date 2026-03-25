@@ -2,7 +2,7 @@ name: Desligamentos
 
 on:
   schedule:
-    - cron: '0 13 * * *'  # 10:00 Brasil
+    - cron: '0 11 * * *'  # 08:00 Brasil
   workflow_dispatch:
 
 jobs:
