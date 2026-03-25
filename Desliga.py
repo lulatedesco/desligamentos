@@ -4,6 +4,32 @@ import os
 
 from datetime import datetime, timedelta
 
+def send_email(html, date_str):
+    api_key = os.getenv("SENDGRID_API_KEY")
+
+    response = requests.post(
+        "https://api.sendgrid.com/v3/mail/send",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "personalizations": [
+                {
+                    "to": [{"email": "ti@esporteclubebahia.com.br"}],
+                    "subject": f"Desligamentos - {date_str}"
+                }
+            ],
+            "from": {"email": "luis.tedesco@esporteclubebahia.com.br"},
+            "content": [
+                {
+                    "type": "text/html",
+                    "value": html
+                }
+            ]
+        }
+    )
+
 def get_target_date():
     today = datetime.now()
 
