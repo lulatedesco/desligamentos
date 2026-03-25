@@ -30,6 +30,30 @@ def send_email(html, date_str):
         }
     )
 
+def generate_email(employees, date_str):
+    if not employees:
+        return f"<p>Não houve desligamentos em {date_str}</p>"
+
+    rows = ""
+    for e in employees:
+        rows += f"""
+        <tr>
+            <td>{e.get('registerNumber')}</td>
+            <td>{e.get('person', {}).get('fullName')}</td>
+        </tr>
+        """
+
+    return f"""
+    <h3>Desligamentos - {date_str}</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Matrícula</th>
+            <th>Nome</th>
+        </tr>
+        {rows}
+    </table>
+    """
+
 def get_target_date():
     today = datetime.now()
 
