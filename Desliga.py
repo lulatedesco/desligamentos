@@ -20,7 +20,7 @@ def send_email(html, date_str):
                     "subject": f"Desligamentos - {date_str}"
                 }
             ],
-            "from": {"email": "luis.tedesco@esporteclubebahia.com.br"},
+            "from": {"email": "lulatedesco@gmail.com"},
             "content": [
                 {
                     "type": "text/html",
