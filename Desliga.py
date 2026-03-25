@@ -30,6 +30,9 @@ def send_email(html, date_str):
         }
     )
 
+    print("EMAIL STATUS:", response.status_code)
+    print("EMAIL RESPONSE:", response.text)
+
 def generate_email(employees, date_str):
     if not employees:
         return f"<p>Não houve desligamentos em {date_str}</p>"
