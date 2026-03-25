@@ -183,6 +183,10 @@ def main():
 
     print(f"Arquivo salvo: {file_name}")
 
+    html = generate_email(filtered, target_date)
+
+    send_email(html, target_date)  # ✅ AQUI
+
     print("\nTOTAL REGISTROS:", len(employees))
 
     # mostra alguns exemplos
