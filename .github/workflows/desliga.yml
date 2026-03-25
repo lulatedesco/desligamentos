@@ -27,6 +27,7 @@ jobs:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           SECRET: ${{ secrets.SECRET }}
           TENANT: ${{ secrets.TENANT }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
       - name: Upload do arquivo
         uses: actions/upload-artifact@v4
