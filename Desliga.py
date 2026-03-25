@@ -209,6 +209,8 @@ def main():
 
     html = generate_email(filtered, target_date)
 
+    print(">>> CHEGOU NO ENVIO DE EMAIL")
+
     send_email(html, target_date)  # ✅ AQUI
 
     print("\nTOTAL REGISTROS:", len(employees))
