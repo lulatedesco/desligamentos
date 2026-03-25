@@ -42,7 +42,7 @@ def generate_email(employees, date_str):
         rows += f"""
         <tr>
             <td>{e.get('registerNumber')}</td>
-            <td>{e.get('person', {}).get('fullName')}</td>
+            <td>{e.get('emails', {}).get('email')}</td>
         </tr>
         """
 
@@ -51,7 +51,7 @@ def generate_email(employees, date_str):
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>Matrícula</th>
-            <th>Nome</th>
+            <th>Email</th>
         </tr>
         {rows}
     </table>
