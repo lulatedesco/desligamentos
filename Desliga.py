@@ -39,10 +39,13 @@ def generate_email(employees, date_str):
 
     rows = ""
     for e in employees:
+        emails = e.get("emails", [])
+        email = emails[0].get("email") if emails else ""
+        
         rows += f"""
         <tr>
             <td>{e.get('registerNumber')}</td>
-            <td>{e.get('emails', {}).get('email')}</td>
+            <td>{email}</td>
         </tr>
         """
 
