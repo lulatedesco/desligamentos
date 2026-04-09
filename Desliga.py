@@ -16,7 +16,7 @@ def send_email(html, date_str):
         json={
             "personalizations": [
                 {
-                    "to": [{"email": "ti@esporteclubebahia.com.br"}],
+                    "to": [{"email": "luistedesco@esporteclubebahia.com.br"}],
                     "subject": f"Desligamentos - {date_str}"
                 }
             ],
